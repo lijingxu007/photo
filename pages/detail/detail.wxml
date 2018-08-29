@@ -1,0 +1,32 @@
+<import src="../../utils/we-cropper/we-cropper.wxml" />
+
+<view class='off-canvas'>
+  <canvas canvas-id="off-canvas">
+  </canvas>
+</view>
+<cover-view class='bottom-mask'></cover-view>
+<view class='detail'>
+  <!-- <cover-view class='bottom-mask'></cover-view> -->
+  <view class='header'>
+    <view>SOUND&SHOT</view>
+    <view class='tips'>
+      <text class='firstLetter'>Each</text> picture is worth telling</view>
+    <!-- <view class='line'></view> -->
+  </view>
+  <view class="cropper-wrapper">
+    <template is="we-cropper" data="{{...cropperOpt}}" />
+  </view>
+  <view class='below'>
+    <view class='change-text' hover-class='refresh-animation' hover-start-time='1' hover-stay-time='100'>
+      <view class='change-tips' bindtap='changeText'>
+        <text>点击切换字幕</text>
+        <image class='refresh' src='/images/refresh.png' mode='widthFix'></image>
+      </view>
+
+    </view>
+    <view class='save'>
+      <view class='save-btn' bindtap='getCropperImage'  hover-class='hover' hover-start-time='1' hover-stay-time='100'>保存照片</view>
+    </view>
+    <view class='copyright'>把生活拍成电影</view>
+  </view>
+</view>
